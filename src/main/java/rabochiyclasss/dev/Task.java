@@ -2,7 +2,7 @@ package rabochiyclasss.dev;
 
 import org.springframework.stereotype.Component;
 
-@Component("main-task")
+//@Component("main-task")
 public class Task {
 
     private final String name;

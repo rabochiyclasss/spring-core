@@ -1,19 +1,20 @@
 package rabochiyclasss.dev;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class TaskConfiguration {
 
-    @Bean
-    public Task task() {
-        return new Task();
-    }
+//    @Bean
+//    public Task task() {
+//        return new Task();
+//    }
 
     @Bean
     public TaskManager taskManager(
-            Task task
+            @Autowired(required = false) Task task
     ){
         return new TaskManager(task);
     }

@@ -13,7 +13,12 @@ public class TaskManager {
     }
 
     public void printTask() {
-        System.out.println("Current task: " + task.toString());
+        if (task == null) {
+            System.out.println("No current task");
+        }
+        else {
+            System.out.println("Current task: " + task.toString());
+        }
     }
 
 }

@@ -8,7 +8,7 @@ public class Main {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(TaskConfiguration.class);
         Task task = context.getBean(Task.class);
-        Task task2 = (Task) context.getBean("main-task");
+        Task task2 = (Task) context.getBean("task");
         System.out.println(task);
         System.out.println(task2);
         System.out.println(task == task2);

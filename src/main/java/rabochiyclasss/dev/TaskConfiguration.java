@@ -3,16 +3,18 @@ package rabochiyclasss.dev;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class TaskConfiguration {
 
-    @Bean("main-task")
+    @Bean
     public Task task() {
         return new Task();
     }
 
     @Bean
-    public TaskManager taskManager(Task task) {
-        return new TaskManager(task);
+    public TaskManager taskManager(
+//            Task task
+    ){
+        return new TaskManager();
     }
 }

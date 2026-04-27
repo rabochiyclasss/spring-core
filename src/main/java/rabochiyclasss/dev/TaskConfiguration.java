@@ -13,8 +13,8 @@ public class TaskConfiguration {
 
     @Bean
     public TaskManager taskManager(
-//            Task task
+            Task task
     ){
-        return new TaskManager();
+        return new TaskManager(task);
     }
 }

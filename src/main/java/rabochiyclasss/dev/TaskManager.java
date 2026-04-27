@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 //@Component
 public class TaskManager {
 
-    @Autowired
     private Task task;
 
 //    @Autowired
@@ -19,5 +18,10 @@ public class TaskManager {
 
     public void printTask() {
         System.out.println("Current task: " + task.toString());
+    }
+
+    @Autowired
+    public void setTask(Task task) {
+        this.task = task;
     }
 }

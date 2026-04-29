@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(TaskConfiguration.class);
+                new AnnotationConfigApplicationContext("rabochiyclasss.dev");
 
 //      Task is a singletone bean so task1 == task2 will return true (it refer to the same object)
         Task task1 = context.getBean(Task.class);

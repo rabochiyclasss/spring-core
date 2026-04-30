@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 @Component("main-task")
 @Scope("prototype")
 public class Task {
@@ -14,6 +16,7 @@ public class Task {
     public Task(){
         this.name = "task";
         this.duration = 60L;
+        System.out.println("call task constructor");
     }
 
     public String getName() {

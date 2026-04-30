@@ -13,7 +13,12 @@ public class Main {
         Task task2 = context.getBean(Task.class);
 
         System.out.println(task1 == task2);
-        TaskManager taskManager =(TaskManager) context.getBean("taskManager");
+
+        TaskManager taskManager = context.getBean(TaskManager.class);
         taskManager.printTask();
+
+        TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
+        taskExecutor.executeTask();
+
     }
 }

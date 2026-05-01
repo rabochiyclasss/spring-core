@@ -6,14 +6,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class JobRunner {
 
-    private final TaskContext taskContext;
+    private final org.springframework.beans.factory.ObjectProvider<TaskContext> taskContextObjectProvider;
 
     @Autowired
-    public JobRunner(TaskContext taskContext) {
-        this.taskContext = taskContext;
+    public JobRunner(org.springframework.beans.factory.ObjectProvider<TaskContext> taskContextObjectProvider) {
+        this.taskContextObjectProvider = taskContextObjectProvider;
     }
 
     public void runOnce() {
+        TaskContext taskContext = taskContextObjectProvider.getObject();
         System.out.println(taskContext.getId());
     }
 }

@@ -1,5 +1,7 @@
 package rabochiyclasss.dev;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +13,16 @@ public class TaskManager {
     @Autowired
     public TaskManager(Task task) {
         this.task = task;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("taskManager post construct");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("taskManager pre destroy");
     }
 
     public void printTask() {

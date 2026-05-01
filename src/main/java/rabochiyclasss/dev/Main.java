@@ -8,7 +8,6 @@ public class Main {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("rabochiyclasss.dev");
 
-//      Task is a singletone bean so task1 == task2 will return true (it refer to the same object)
         Task task1 = context.getBean(Task.class);
         Task task2 = context.getBean(Task.class);
 
@@ -20,5 +19,6 @@ public class Main {
         TaskExecutor taskExecutor = context.getBean(TaskExecutor.class);
         taskExecutor.executeTask();
 
+        context.close();
     }
 }

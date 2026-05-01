@@ -1,10 +1,11 @@
 package rabochiyclasss.dev;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.ThreadLocalRandom;
 
 @Component("main-task")
 @Scope("prototype")
@@ -17,6 +18,16 @@ public class Task {
         this.name = "task";
         this.duration = 60L;
         System.out.println("call task constructor");
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("task post construct");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("task pre destroy");
     }
 
     public String getName() {

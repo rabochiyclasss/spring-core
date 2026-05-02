@@ -13,7 +13,7 @@ public class AppConfig {
     }
 
     @Bean
-    @Scope("prototype")
+//    @Scope("prototype")
     public OperationContext operationContext() {
         return new OperationContext();
     }

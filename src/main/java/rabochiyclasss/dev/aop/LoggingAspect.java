@@ -48,19 +48,27 @@ public class LoggingAspect {
 //        System.out.println("After method execution: " + joinPoint.getSignature().getName());
 //    }
 
-    @Around("execution(* rabochiyclasss.dev.TaskManager.*(..))")
-    public Object logAround(
-        ProceedingJoinPoint proceedingJoinPoint
-    ) throws Throwable {
-        //some logic before calling the actual method
-        System.out.println("Before method");
+//    @Around("execution(* rabochiyclasss.dev.TaskManager.*(..))")
+//    public Object logAround(
+//        ProceedingJoinPoint proceedingJoinPoint
+//    ) throws Throwable {
+//        //some logic before calling the actual method
+//        System.out.println("Before method");
+//
+//        Object result = proceedingJoinPoint.proceed();
+//
+//        //some logic after calling the actual method
+//        System.out.println("After method");
+//
+//        return result;
+//    }
 
-        Object result = proceedingJoinPoint.proceed();
-
-        //some logic after calling the actual method
-        System.out.println("After method");
-
-        return result;
+    @Before("@annotation(loggable)")
+    public void log(
+            JoinPoint joinPoint,
+            Loggable loggable
+    ){
+        System.out.println("LOG: before method=" +
+                joinPoint.getSignature().getName());
     }
-
 }

@@ -1,6 +1,7 @@
 package rabochiyclasss.dev;
 
 import org.springframework.stereotype.Component;
+import rabochiyclasss.dev.aop.Loggable;
 
 @Component
 public class TaskExecutor {
@@ -10,6 +11,7 @@ public class TaskExecutor {
         this.task = task;
     }
 
+    @Loggable
     public void executeTask() {
         System.out.printf("Execute task with name %s, total seconds %s%n",
                 task.getName(),

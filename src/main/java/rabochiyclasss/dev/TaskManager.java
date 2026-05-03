@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import rabochiyclasss.dev.aop.Loggable;
 
 @Component
 public class TaskManager {
@@ -25,6 +26,7 @@ public class TaskManager {
 //        System.out.println("taskManager pre destroy");
     }
 
+    @Loggable
     public Integer printTask() {
         if (task == null) {
             System.out.println("No current task");

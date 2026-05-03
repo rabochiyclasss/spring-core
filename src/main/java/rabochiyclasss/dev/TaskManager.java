@@ -17,21 +17,23 @@ public class TaskManager {
 
     @PostConstruct
     public void postConstruct() {
-        System.out.println("taskManager post construct");
+//        System.out.println("taskManager post construct");
     }
 
     @PreDestroy
     public void preDestroy() {
-        System.out.println("taskManager pre destroy");
+//        System.out.println("taskManager pre destroy");
     }
 
-    public void printTask() {
+    public Integer printTask() {
         if (task == null) {
             System.out.println("No current task");
         }
         else {
             System.out.println("Current task: " + task.toString());
         }
+//        throw new RuntimeException("Exception in taskManager");
+        return task.getDuration();
     }
 
 }
